@@ -198,6 +198,27 @@ const ProductForm = () => {
           question_type: "select",
           options: ["Yes", "No", "Some artificial ingredients"],
           ai_generated: true
+        },
+        {
+          question_text: "What is the source of your main ingredients (farm/supplier details)?",
+          question_type: "textarea",
+          ai_generated: true
+        },
+        {
+          question_text: "Do you have organic or non-GMO certifications?",
+          question_type: "select",
+          options: ["Organic certified", "Non-GMO certified", "Both", "Neither"],
+          ai_generated: true
+        },
+        {
+          question_text: "What is your packaging sustainability approach?",
+          question_type: "textarea",
+          ai_generated: true
+        },
+        {
+          question_text: "How do you ensure food safety and quality control?",
+          question_type: "textarea",
+          ai_generated: true
         }
       ],
       "Cosmetics & Personal Care": [
@@ -211,6 +232,28 @@ const ProductForm = () => {
           question_text: "What is the product's sustainability packaging approach?",
           question_type: "textarea",
           ai_generated: true
+        },
+        {
+          question_text: "List all chemical ingredients and their purposes",
+          question_type: "textarea",
+          ai_generated: true
+        },
+        {
+          question_text: "Do you have cruelty-free or vegan certifications?",
+          question_type: "select",
+          options: ["Cruelty-free certified", "Vegan certified", "Both", "Neither"],
+          ai_generated: true
+        },
+        {
+          question_text: "What safety testing has been conducted?",
+          question_type: "textarea",
+          ai_generated: true
+        },
+        {
+          question_text: "Are your ingredients ethically sourced?",
+          question_type: "select",
+          options: ["Yes, fully ethical", "Partially", "No", "Unknown"],
+          ai_generated: true
         }
       ],
       "Electronics": [
@@ -223,6 +266,130 @@ const ProductForm = () => {
           question_text: "Are replacement parts available?",
           question_type: "select",
           options: ["Yes", "No", "Limited availability"],
+          ai_generated: true
+        },
+        {
+          question_text: "What materials are used in manufacturing?",
+          question_type: "textarea",
+          ai_generated: true
+        },
+        {
+          question_text: "Do you have a recycling or take-back program?",
+          question_type: "select",
+          options: ["Yes, comprehensive", "Limited program", "No", "Planned"],
+          ai_generated: true
+        },
+        {
+          question_text: "What are your labor and manufacturing practices?",
+          question_type: "textarea",
+          ai_generated: true
+        },
+        {
+          question_text: "Energy efficiency and environmental impact measures?",
+          question_type: "textarea",
+          ai_generated: true
+        }
+      ],
+      "Clothing & Textiles": [
+        {
+          question_text: "What materials and fibers are used?",
+          question_type: "textarea",
+          ai_generated: true
+        },
+        {
+          question_text: "Are your materials sustainably sourced?",
+          question_type: "select",
+          options: ["Yes, fully sustainable", "Partially", "No", "Unknown"],
+          ai_generated: true
+        },
+        {
+          question_text: "What are your labor and factory conditions?",
+          question_type: "textarea",
+          ai_generated: true
+        },
+        {
+          question_text: "Do you use chemical treatments or dyes?",
+          question_type: "select",
+          options: ["Yes, conventional", "Low-impact chemicals", "No chemicals", "Unknown"],
+          ai_generated: true
+        },
+        {
+          question_text: "What certifications do you have (Fair Trade, GOTS, etc.)?",
+          question_type: "textarea",
+          ai_generated: true
+        }
+      ],
+      "Pharmaceuticals": [
+        {
+          question_text: "What are the active ingredients and their sources?",
+          question_type: "textarea",
+          ai_generated: true
+        },
+        {
+          question_text: "What clinical trials have been conducted?",
+          question_type: "textarea",
+          ai_generated: true
+        },
+        {
+          question_text: "Are there any known side effects or contraindications?",
+          question_type: "textarea",
+          ai_generated: true
+        },
+        {
+          question_text: "What regulatory approvals do you have?",
+          question_type: "select",
+          options: ["FDA approved", "CE marked", "Other regulatory", "Pending approval"],
+          ai_generated: true
+        },
+        {
+          question_text: "How do you ensure quality control and safety?",
+          question_type: "textarea",
+          ai_generated: true
+        }
+      ],
+      "Home & Garden": [
+        {
+          question_text: "What materials and chemicals are used?",
+          question_type: "textarea",
+          ai_generated: true
+        },
+        {
+          question_text: "Is this product safe for children and pets?",
+          question_type: "select",
+          options: ["Yes, completely safe", "Safe with precautions", "Not recommended", "Unknown"],
+          ai_generated: true
+        },
+        {
+          question_text: "What environmental impact does this product have?",
+          question_type: "textarea",
+          ai_generated: true
+        },
+        {
+          question_text: "How should this product be disposed of?",
+          question_type: "textarea",
+          ai_generated: true
+        }
+      ],
+      "Sports & Recreation": [
+        {
+          question_text: "What materials and construction methods are used?",
+          question_type: "textarea",
+          ai_generated: true
+        },
+        {
+          question_text: "What safety testing and certifications do you have?",
+          question_type: "textarea",
+          ai_generated: true
+        },
+        {
+          question_text: "Is this product durable and repairable?",
+          question_type: "select",
+          options: ["Highly durable", "Moderately durable", "Limited durability", "Unknown"],
+          ai_generated: true
+        },
+        {
+          question_text: "What is your manufacturing and labor practices?",
+          question_type: "textarea",
           ai_generated: true
         }
       ]
@@ -513,10 +680,15 @@ const ProductForm = () => {
                   Your transparency analysis for <strong>{productData.name}</strong> is ready.
                 </p>
                 
-                <div className="flex gap-4 justify-center">
+                <div className="flex gap-4 justify-center flex-wrap">
                   <Button variant="hero" asChild>
                     <a href={`/reports?product=${productId}`}>
                       View Report
+                    </a>
+                  </Button>
+                  <Button variant="outline" asChild>
+                    <a href="/reports">
+                      Browse All Reports
                     </a>
                   </Button>
                   <Button variant="outline" onClick={() => {

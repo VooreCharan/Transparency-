@@ -37,8 +37,10 @@ const Index = () => {
                 Start Analysis <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
-            <Button variant="outline" size="xl" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
-              View Sample Report
+            <Button variant="outline" size="xl" className="bg-white/10 border-white/20 text-white hover:bg-white/20" asChild>
+              <a href="/reports">
+                View Sample Report
+              </a>
             </Button>
           </div>
         </div>
