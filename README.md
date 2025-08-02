@@ -122,11 +122,6 @@ A comprehensive AI-powered web application that collects detailed product inform
 
 ### Deployment
 
-#### Using Lovable (Recommended)
-1. Visit [Lovable Project](https://lovable.dev/projects/0126cd62-25df-48c4-9fb9-4a2ba7541bac)
-2. Click Share → Publish
-3. Your app will be live instantly
-
 #### Manual Deployment
 1. Build the project: `npm run build`
 2. Deploy `dist/` folder to your hosting provider
@@ -290,6 +285,11 @@ The platform was built following these core principles:
 The transparency scoring considers multiple factors:
 - **Information Completeness**: How thoroughly questions are answered
 - **Detail Quality**: Depth and specificity of responses
+- **Transparency Indicators**: Presence of certifications, testing, and disclosure
+- **Category Relevance**: Industry-specific requirements and standards
+- **Continuous Improvement**: Recommendations for enhancing transparency
+
+This comprehensive approach ensures meaningful, actionable transparency insights that build genuine consumer trust.
 - **Transparency Indicators**: Presence of certifications, testing, and disclosure
 - **Category Relevance**: Industry-specific requirements and standards
 - **Continuous Improvement**: Recommendations for enhancing transparency
