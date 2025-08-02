@@ -4,7 +4,7 @@ A comprehensive AI-powered web application that collects detailed product inform
 
 ## 🚀 Live Demo
 
-**Project URL**: https://lovable.dev/projects/0126cd62-25df-48c4-9fb9-4a2ba7541bac
+
 
 ## 📋 Features
 
